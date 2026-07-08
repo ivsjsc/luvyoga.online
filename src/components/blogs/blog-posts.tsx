@@ -32,7 +32,44 @@ const posts = [
   },
 ];
 
-export default function BlogPosts() {
+interface BlogPostsProps {
+  compact?: boolean;
+}
+
+export default function BlogPosts({ compact = false }: BlogPostsProps) {
+  if (compact) {
+    return (
+      <div className="space-y-4">
+        {posts.map((post) => (
+          <Card key={post.title} className="overflow-hidden shadow-sm transition-transform hover:shadow-md">
+            <div className="flex flex-col">
+              {post.image && (
+                <div className="relative w-full h-32">
+                  <Image
+                    src={post.image.imageUrl}
+                    alt={post.image.description}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={post.image.imageHint}
+                  />
+                </div>
+              )}
+              <CardHeader className="pb-3">
+                <CardTitle className="font-headline text-base line-clamp-2">{post.title}</CardTitle>
+                <CardDescription className="text-xs">
+                  {post.date}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-sm text-muted-foreground line-clamp-2">{post.description}</p>
+              </CardContent>
+            </div>
+          </Card>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-8">
       {posts.map((post) => (
