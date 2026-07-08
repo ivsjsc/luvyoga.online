@@ -19,10 +19,10 @@ import { Menu } from 'lucide-react';
 const navLinks = [
   { name: 'Giới Thiệu', href: '/#about' },
   { name: 'Lịch Tập', href: '/#classes' },
-  { name: 'Trị Liệu', href: '/#therapy' },
-  { name: 'Blogs', href: '/blogs' },
+  { name: 'Trị Liệu', href: '/#therapy' },  
   { name: 'Quản Trị', href: '/admin' },
   { name: 'Liên Hệ', href: '/#contact' },
+  { name: 'Blogs', href: '/blogs' },
 ];
 
 export default function Header() {
