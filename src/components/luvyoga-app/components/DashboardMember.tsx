@@ -412,7 +412,7 @@ const DashboardMember: React.FC<DashboardMemberProps> = ({ user, classes, paymen
                     </div>
                     <div class="company-info">
                         <h2>Luv Yoga Sanctuary</h2>
-                        <p>Ấp Nhân Hoà, Xã Tây Hoà, Trảng Bom, Đồng Nai</p>
+                        <p>Số 113/1 đường Tây Hoà 05, Ấp Nhân Hoà, Xã Hưng Thịnh, Thành phố Đồng Nai</p>
                         <p>Hotline: 035 251 8855</p>
                         <p>Email: luvyoga.official@gmail.com</p>
                     </div>
@@ -1521,11 +1521,11 @@ const DashboardMember: React.FC<DashboardMemberProps> = ({ user, classes, paymen
                     </div>
 
                     <div className="p-6 space-y-4">
-                            <a href="https://maps.google.com/?q=Ấp Nhân Hoà, Xã Tây Hoà, Huyện Trảng Bom, Tỉnh Đồng Nai" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-3 hover:bg-gray-50 rounded-xl transition-colors">
+                            <a href="https://maps.app.goo.gl/seeaLRWHmMEHxrk19" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-3 hover:bg-gray-50 rounded-xl transition-colors">
                                 <div className="bg-red-50 text-red-500 p-3 rounded-full shrink-0"><MapPin size={20} /></div>
                                 <div>
                                     <h4 className="font-bold text-gray-800 text-sm">Địa chỉ</h4>
-                                    <p className="text-sm text-gray-600 mt-1">Ấp Nhân Hoà, Xã Tây Hoà, Huyện Trảng Bom, Tỉnh Đồng Nai</p>
+                                    <p className="text-sm text-gray-600 mt-1">Số 113/1 đường Tây Hoà 05, Ấp Nhân Hoà, Xã Hưng Thịnh, Thành phố Đồng Nai</p>
                                 </div>
                             </a>
 

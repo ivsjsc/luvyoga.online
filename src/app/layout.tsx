@@ -92,9 +92,9 @@ export default function RootLayout({
               "email": "luvyoga.official@gmail.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Ấp Nhân Hoà",
-                "addressLocality": "Xã Tây Hoà",
-                "addressRegion": "Huyện Trảng Bom",
+                "streetAddress": "Số 113/1 đường Tây Hoà 05, Ấp Nhân Hoà",
+                "addressLocality": "Xã Hưng Thịnh",
+                "addressRegion": "Thành phố Đồng Nai",
                 "addressCountry": "VN"
               },
               "geo": {

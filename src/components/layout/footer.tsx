@@ -109,14 +109,14 @@ export default function Footer() {
 
             <div className="space-y-4 text-sm font-semibold text-[#43342C]">
               <a
-                href="https://maps.app.goo.gl/Z7b8kdwoQcx2y4JPA"
+                href="https://maps.app.goo.gl/seeaLRWHmMEHxrk19"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-start gap-3 rounded-2xl p-3 transition hover:bg-[#F6ECE2]"
               >
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#8A5635] transition group-hover:scale-110" />
                 <span className="leading-7">
-                  Ấp Nhân Hoà, Xã Tây Hoà, Huyện Trảng Bom, Tỉnh Đồng Nai
+                  Số 113/1 đường Tây Hoà 05, Ấp Nhân Hoà, Xã Hưng Thịnh, Thành phố Đồng Nai
                 </span>
               </a>
 
@@ -172,7 +172,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="https://maps.app.goo.gl/Z7b8kdwoQcx2y4JPA"
+              href="https://maps.app.goo.gl/seeaLRWHmMEHxrk19"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center justify-center rounded-2xl bg-gradient-to-b from-[#8A5635] to-[#70442C] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#70442C]/20 transition hover:-translate-y-0.5 hover:from-[#7A4D35] hover:to-[#633B27]"

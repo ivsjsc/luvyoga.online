@@ -46,8 +46,8 @@ export default function AboutSection() {
               <div className="mt-4 space-y-3 text-sm text-[#5C4D43]/95">
                 <p className="font-semibold text-[#4B3427]">𝑳𝑼𝑽 𝒀𝑶𝑮𝑨 — more everyday · Yêu Yoga hơn mỗi ngày</p>
                 <p>📞 <a href="tel:0352518855" className="text-[#7A4D35] font-semibold hover:underline">035 251 88 55</a></p>
-                <p>🏡 Ấp Nhân Hoà, Xã Tây Hoà, Huyện Trảng Bom, Đồng Nai</p>
-                <p>📍 <a href="https://maps.app.goo.gl/Z7b8kdwoQcx2y4JPA" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-[#7A4D35]">Bản đồ</a></p>
+                <p>🏡 Số 113/1 đường Tây Hoà 05, Ấp Nhân Hoà, Xã Hưng Thịnh, Thành phố Đồng Nai</p>
+                <p>📍 <a href="https://maps.app.goo.gl/seeaLRWHmMEHxrk19" target="_blank" rel="noopener noreferrer" className="underline font-semibold hover:text-[#7A4D35]">Bản đồ</a></p>
               </div>
 
               <div className="mt-4 border-t border-[#7A4D35]/10 pt-4 text-sm text-[#5C4D43]/90 space-y-2 bg-white/50 backdrop-blur-xs p-4 rounded-xl">
