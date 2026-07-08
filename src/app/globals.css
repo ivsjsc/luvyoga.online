@@ -140,3 +140,9 @@
     transform: scale(1);
   }
 }
+
+/* Hide Next.js dev indicator loading logo */
+[data-next-mark-loading],
+#__next-hs-dev-indicator {
+  display: none !important;
+}

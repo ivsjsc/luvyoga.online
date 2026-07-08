@@ -2,6 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
+  devIndicators: false,
   // When deploying to custom domain, we don't need basePath and assetPrefix
   // basePath: '/luvyoga',
   // assetPrefix: '/luvyoga/',

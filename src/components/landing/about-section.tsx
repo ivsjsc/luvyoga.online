@@ -76,7 +76,7 @@ export default function AboutSection() {
               <p>Chúng tôi chia sẻ hành trình tập luyện, trị liệu và lớp học trên kênh Facebook của Luv Yoga.</p>
             </div>
           </div>
-          <div className="flex flex-col animate-slide-up">
+          <div className="flex flex-col min-w-0 overflow-hidden animate-slide-up">
             {selectedImage && (
               <Card className="overflow-hidden shadow-xl border-2 border-primary/10">
                 <CardContent className="p-0 relative aspect-[4/3] w-full">

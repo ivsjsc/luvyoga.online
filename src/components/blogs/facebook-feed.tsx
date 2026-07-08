@@ -59,7 +59,7 @@ export default function FacebookFeed() {
           <ExternalLink className="h-3 w-3" />
         </a>
       </div>
-      <div className="relative w-full aspect-[5/6] sm:h-[620px] flex items-center justify-center bg-muted/20 overflow-hidden">
+      <div className="relative w-full h-[580px] sm:h-[620px] flex items-center justify-center bg-muted/20 overflow-hidden">
         <iframe
             src={`https://www.facebook.com/plugins/page.php?href=${encodedUrl}&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
             width="500"
