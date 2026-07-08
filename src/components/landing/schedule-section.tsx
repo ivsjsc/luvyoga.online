@@ -17,6 +17,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { SectionBackground } from '@/components/ui/backgrounds';
 
 const communityClasses = [
   { time: '04:45 ➡️ 06:00', period: 'Sáng' },
@@ -28,48 +29,48 @@ const communityClasses = [
 const BookingDialog = () => (
   <Dialog>
     <DialogTrigger asChild>
-      <Button className="w-full">Đặt Lịch Ngay</Button>
+      <Button className="w-full bg-[#7A4D35] hover:bg-[#68412C] text-white">Đặt Lịch Ngay</Button>
     </DialogTrigger>
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
-        <DialogTitle className="font-headline">Đặt Lịch Tập</DialogTitle>
+        <DialogTitle className="font-headline text-[#4B3427]">Đặt Lịch Tập</DialogTitle>
         <DialogDescription>
           Hãy liên hệ với chúng tôi để giữ chỗ. Rất mong được gặp bạn!
         </DialogDescription>
       </DialogHeader>
       <div className="space-y-4 py-4">
-        <a href="tel:0352518855" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-secondary">
-          <Phone className="h-6 w-6 text-primary" />
+        <a href="tel:0352518855" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-amber-50">
+          <Phone className="h-6 w-6 text-[#7A4D35]" />
           <div>
-            <p className="font-semibold">Điện thoại</p>
+            <p className="font-semibold text-[#4B3427]">Điện thoại</p>
             <p className="text-muted-foreground">035 251 8855</p>
           </div>
         </a>
-        <a href="mailto:luvyoga.official@gmail.com" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-secondary">
-          <Mail className="h-6 w-6 text-primary" />
+        <a href="mailto:luvyoga.official@gmail.com" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-amber-50">
+          <Mail className="h-6 w-6 text-[#7A4D35]" />
           <div>
-            <p className="font-semibold">Email</p>
+            <p className="font-semibold text-[#4B3427]">Email</p>
             <p className="text-muted-foreground">luvyoga.official@gmail.com</p>
           </div>
         </a>
-        <a href="https://m.me/LuvYoga.Official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-secondary">
-            <MessageCircle className="h-6 w-6 text-primary" />
+        <a href="https://m.me/LuvYoga.Official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-amber-50">
+            <MessageCircle className="h-6 w-6 text-[#7A4D35]" />
             <div>
-                <p className="font-semibold">Facebook Messenger</p>
+                <p className="font-semibold text-[#4B3427]">Facebook Messenger</p>
                 <p className="text-muted-foreground">LuvYoga.Official</p>
             </div>
         </a>
-    <a href="https://www.instagram.com/luvyoga.official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-secondary">
-      <MessageCircle className="h-6 w-6 text-primary" />
+    <a href="https://www.instagram.com/luvyoga.official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-amber-50">
+      <MessageCircle className="h-6 w-6 text-[#7A4D35]" />
       <div>
-        <p className="font-semibold">Instagram</p>
+        <p className="font-semibold text-[#4B3427]">Instagram</p>
         <p className="text-muted-foreground">@luvyoga.official</p>
       </div>
     </a>
-    <a href="https://www.facebook.com/LuvYoga.Official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-secondary">
-      <MessageCircle className="h-6 w-6 text-primary" />
+    <a href="https://www.facebook.com/LuvYoga.Official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-amber-50">
+      <MessageCircle className="h-6 w-6 text-[#7A4D35]" />
       <div>
-        <p className="font-semibold">Facebook</p>
+        <p className="font-semibold text-[#4B3427]">Facebook</p>
         <p className="text-muted-foreground">/LuvYoga.Official</p>
       </div>
     </a>
@@ -80,57 +81,59 @@ const BookingDialog = () => (
 
 export default function ScheduleSection() {
   return (
-    <section id="classes" className="bg-secondary py-16 sm:py-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            Lịch Tập
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg font-medium">
-            Tìm một thời gian phù hợp và tham gia cộng đồng của chúng tôi.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="flex flex-col shadow-lg overflow-hidden lg:col-span-1">
-            <CardContent className="p-0">
-               <Image
-                  src="/images/lich-luvyoga.jpg"
-                  alt="Luv Yoga class schedule poster showing morning and evening session times"
-                  width={600}
-                  height={750}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-            </CardContent>
-            <CardFooter className="p-4 mt-auto">
-              <BookingDialog />
-            </CardFooter>
-          </Card>
+    <SectionBackground type="classes">
+      <section id="classes" className="py-16 sm:py-24 relative z-10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mb-12 text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl text-[#4B3427]">
+              Lịch Tập
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg font-medium text-[#5C4D43]/90">
+              Tìm một thời gian phù hợp và tham gia cộng đồng của chúng tôi.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="flex flex-col shadow-lg overflow-hidden lg:col-span-1 bg-white/70 backdrop-blur-md border-[#7A4D35]/10">
+              <CardContent className="p-0">
+                 <Image
+                    src="/images/lich-luvyoga.jpg"
+                    alt="Luv Yoga class schedule poster showing morning and evening session times"
+                    width={600}
+                    height={750}
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+              </CardContent>
+              <CardFooter className="p-4 mt-auto">
+                <BookingDialog />
+              </CardFooter>
+            </Card>
 
-          <Card className="flex flex-col shadow-lg md:col-span-2">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 font-headline text-2xl">
-                <Users className="h-6 w-6 text-primary" />
-                Lớp Cộng Đồng
-              </CardTitle>
-              <CardDescription>Tham gia các buổi tập nhóm thường xuyên của chúng tôi.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {communityClasses.map((item) => (
-                  <div key={item.time} className="flex items-center gap-3 rounded-md border p-3">
-                    <Clock className="h-5 w-5 text-muted-foreground" />
-                    <span className="font-medium">{item.time}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-            <CardFooter>
-              <BookingDialog />
-            </CardFooter>
-          </Card>
+            <Card className="flex flex-col shadow-lg md:col-span-2 bg-white/70 backdrop-blur-md border-[#7A4D35]/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 font-headline text-2xl text-[#4B3427]">
+                  <Users className="h-6 w-6 text-[#7A4D35]" />
+                  Lớp Cộng Đồng
+                </CardTitle>
+                <CardDescription className="text-[#5C4D43]/85">Tham gia các buổi tập nhóm thường xuyên của chúng tôi.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {communityClasses.map((item) => (
+                    <div key={item.time} className="flex items-center gap-3 rounded-md border border-[#7A4D35]/10 bg-white/80 p-3">
+                      <Clock className="h-5 w-5 text-[#7A4D35]" />
+                      <span className="font-semibold text-[#4B3427]">{item.time}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+              <CardFooter>
+                <BookingDialog />
+              </CardFooter>
+            </Card>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </SectionBackground>
   );
 }
