@@ -1,6 +1,6 @@
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import FacebookFeed from '@/components/album/facebook-feed';
+import FacebookFeed from '@/components/blogs/facebook-feed';
 
 export default function AlbumPage() {
   return (

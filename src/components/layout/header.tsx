@@ -98,7 +98,7 @@ export default function Header() {
         {/* Prominent App CTA for desktop */}
         <div className="hidden md:flex items-center md:ml-4">
           <Button asChild size="lg" className="bg-white text-primary px-4 py-2 rounded-lg shadow-md hover:opacity-95">
-            <a href="https://app.luvyoga.online" target="_blank" rel="noopener noreferrer">LuvYOGA App</a>
+            <a href="https://app.luvyoga.online/" target="_blank" rel="noopener noreferrer">LuvYOGA App</a>
           </Button>
         </div>
         <div className="md:hidden">
@@ -131,7 +131,7 @@ export default function Header() {
                 </nav>
                 {/* App CTA in mobile sheet */}
                 <div className="pt-4">
-                  <a href="https://app.luvyoga.online" target="_blank" rel="noopener noreferrer" className="block">
+                  <a href="https://app.luvyoga.online/" target="_blank" rel="noopener noreferrer" className="block">
                     <Button size="lg" className="w-full bg-white text-primary font-semibold">LuvYOGA App</Button>
                   </a>
                 </div>

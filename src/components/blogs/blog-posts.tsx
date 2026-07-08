@@ -41,28 +41,31 @@ export default function BlogPosts({ compact = false }: BlogPostsProps) {
     return (
       <div className="space-y-4">
         {posts.map((post) => (
-          <Card key={post.title} className="overflow-hidden shadow-sm transition-transform hover:shadow-md">
-            <div className="flex flex-col">
+          <Card 
+            key={post.title} 
+            className="overflow-hidden border border-primary/5 bg-card hover:bg-primary/5 transition-all duration-300 hover:shadow-md group cursor-pointer"
+          >
+            <div className="flex p-3 gap-4 items-center">
               {post.image && (
-                <div className="relative w-full h-32">
+                <div className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 shadow-sm border border-primary/10">
                   <Image
                     src={post.image.imageUrl}
                     alt={post.image.description}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     data-ai-hint={post.image.imageHint}
                   />
                 </div>
               )}
-              <CardHeader className="pb-3">
-                <CardTitle className="font-headline text-base line-clamp-2">{post.title}</CardTitle>
-                <CardDescription className="text-xs">
-                  {post.date}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-sm text-muted-foreground line-clamp-2">{post.description}</p>
-              </CardContent>
+              <div className="flex-1 min-w-0">
+                <span className="text-[10px] font-semibold text-primary/75 tracking-wider uppercase">{post.date}</span>
+                <h4 className="font-headline text-sm font-semibold text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors mt-0.5">
+                  {post.title}
+                </h4>
+                <p className="text-xs text-muted-foreground line-clamp-1 mt-1">
+                  {post.description}
+                </p>
+              </div>
             </div>
           </Card>
         ))}
@@ -73,30 +76,31 @@ export default function BlogPosts({ compact = false }: BlogPostsProps) {
   return (
     <div className="space-y-8">
       {posts.map((post) => (
-        <Card key={post.title} className="overflow-hidden shadow-lg transition-transform hover:scale-[1.02]">
+        <Card key={post.title} className="overflow-hidden border border-primary/10 shadow-md transition-all duration-300 hover:shadow-lg group">
             <div className="grid md:grid-cols-3">
                 <div className="md:col-span-1">
                     {post.image && (
-                    <div className="relative h-48 md:h-full w-full">
+                    <div className="relative h-48 md:h-full w-full overflow-hidden">
                         <Image
                             src={post.image.imageUrl}
                             alt={post.image.description}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-500 group-hover:scale-103"
                             data-ai-hint={post.image.imageHint}
                         />
                     </div>
                     )}
                 </div>
                 <div className="md:col-span-2">
-                    <CardHeader>
-                        <CardTitle className="font-headline text-xl">{post.title}</CardTitle>
-                        <CardDescription>
-                            Đăng bởi {post.author} vào {post.date}
+                    <CardHeader className="pb-2">
+                        <span className="text-xs font-semibold text-primary tracking-wider uppercase">{post.date}</span>
+                        <CardTitle className="font-headline text-xl mt-1 group-hover:text-primary transition-colors">{post.title}</CardTitle>
+                        <CardDescription className="text-xs">
+                            Đăng bởi {post.author}
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">{post.description}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{post.description}</p>
                     </CardContent>
                 </div>
             </div>

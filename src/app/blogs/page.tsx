@@ -19,19 +19,29 @@ export default function BlogsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <h3 className="font-headline text-2xl font-bold tracking-tight sm:text-3xl mb-8">
-                  Cập nhật mới nhất từ Fanpage
-                </h3>
-                <div className="flex justify-center lg:justify-start">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+              <div className="lg:col-span-2 space-y-6">
+                <div className="border-b border-primary/10 pb-4">
+                  <h3 className="font-headline text-2xl font-bold tracking-tight text-primary">
+                    Cập nhật mới nhất từ Fanpage
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Theo dõi các hoạt động, hình ảnh và bài đăng trực tiếp từ trang Facebook chính thức của Luv Yoga.
+                  </p>
+                </div>
+                <div className="w-full flex justify-center">
                   <FacebookFeed />
                 </div>
               </div>
-              <div className="lg:col-span-1">
-                <h3 className="font-headline text-2xl font-bold tracking-tight sm:text-3xl mb-8 text-center lg:text-left">
-                  Bài viết nổi bật
-                </h3>
+              <div className="lg:col-span-1 space-y-6">
+                <div className="border-b border-primary/10 pb-4">
+                  <h3 className="font-headline text-2xl font-bold tracking-tight text-primary">
+                    Bài viết nổi bật
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Kiến thức hữu ích về Yoga định tuyến, trị liệu và thực hành mỗi ngày.
+                  </p>
+                </div>
                 <BlogPosts compact={true} />
               </div>
             </div>
