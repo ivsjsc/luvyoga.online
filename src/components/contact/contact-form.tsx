@@ -23,21 +23,45 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('https://formspree.io/f/xpqgeypb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
 
-    toast({
-      title: "Cảm ơn bạn đã liên hệ!",
-      description: "Chúng tôi sẽ phản hồi sớm nhất có thể.",
-    });
+      if (response.ok) {
+        toast({
+          title: "Cảm ơn bạn đã liên hệ!",
+          description: "Chúng tôi sẽ phản hồi sớm nhất có thể.",
+        });
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
-    setIsSubmitting(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        const data = await response.json();
+        toast({
+          title: "Đã xảy ra lỗi!",
+          description: data.errors?.map((err: any) => err.message).join(', ') || "Không thể gửi tin nhắn lúc này. Vui lòng thử lại sau.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Lỗi kết nối!",
+        description: "Không thể kết nối đến máy chủ. Vui lòng kiểm tra mạng của bạn.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
