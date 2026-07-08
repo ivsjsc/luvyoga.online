@@ -41,7 +41,7 @@ export default function FacebookFeed() {
   }
 
   return (
-    <div className="w-full max-w-[550px] mx-auto bg-white rounded-2xl border border-primary/10 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+    <div className="w-full max-w-[620px] mx-auto bg-white rounded-2xl border border-primary/10 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
       <div className="bg-primary/5 px-4 py-3 flex items-center justify-between border-b border-primary/10">
         <div className="flex items-center gap-2">
           <div className="p-1.5 bg-blue-600 text-white rounded-lg">
@@ -59,7 +59,7 @@ export default function FacebookFeed() {
           <ExternalLink className="h-3 w-3" />
         </a>
       </div>
-      <div className="relative w-full aspect-[5/6] sm:h-[600px] flex items-center justify-center bg-muted/20 overflow-hidden">
+      <div className="relative w-full aspect-[5/6] sm:h-[620px] flex items-center justify-center bg-muted/20 overflow-hidden">
         <iframe
             src={`https://www.facebook.com/plugins/page.php?href=${encodedUrl}&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
             width="500"
@@ -69,7 +69,7 @@ export default function FacebookFeed() {
             frameBorder="0"
             allowFullScreen={true}
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            className="rounded-b-2xl max-w-full sm:scale-105 md:scale-110 origin-center transition-all duration-300"
+            className="rounded-b-2xl max-w-full sm:scale-115 md:scale-120 origin-center transition-all duration-300"
             onError={() => setIframeFailed(true)}
         ></iframe>
       </div>

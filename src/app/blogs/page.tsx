@@ -21,7 +21,7 @@ export default function BlogsPage() {
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Facebook Feed Column */}
-              <div className="lg:col-span-5 xl:col-span-4 space-y-6">
+              <div className="lg:col-span-6 xl:col-span-5 space-y-6">
                 <div className="border-b border-primary/10 pb-4">
                   <h3 className="font-headline text-2xl font-bold tracking-tight text-primary">
                     Cập nhật mới nhất từ Fanpage
@@ -36,7 +36,7 @@ export default function BlogsPage() {
               </div>
 
               {/* Blog Posts Column */}
-              <div className="lg:col-span-7 xl:col-span-8 space-y-6">
+              <div className="lg:col-span-6 xl:col-span-7 space-y-6">
                 <div className="border-b border-primary/10 pb-4">
                   <h3 className="font-headline text-2xl font-bold tracking-tight text-primary">
                     Bài viết nổi bật

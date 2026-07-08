@@ -4,7 +4,6 @@ import HeroSection from '@/components/landing/hero-section';
 import AboutSection from '@/components/landing/about-section';
 import ScheduleSection from '@/components/landing/schedule-section';
 import TherapySection from '@/components/landing/therapy-section';
-import AlbumSection from '@/components/landing/album-section';
 import ContactForm from '@/components/contact/contact-form';
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
         <AboutSection />
         <ScheduleSection />
         <TherapySection />
-        <AlbumSection />
         <ContactForm />
       </main>
       <Footer />

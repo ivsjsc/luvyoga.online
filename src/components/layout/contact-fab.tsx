@@ -105,7 +105,7 @@ export default function ContactFAB() {
         <Button
           onClick={() => setIsOpen(!isOpen)}
           size="icon"
-          className="h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:bg-primary/90 hover:scale-110"
+          className="h-14 w-14 rounded-full bg-gradient-to-tr from-amber-500 to-rose-500 text-white shadow-xl transition-all duration-300 hover:from-amber-600 hover:to-rose-600 hover:scale-110 border-none ring-2 ring-white/20"
           aria-expanded={isOpen}
         >
           {isOpen ? (

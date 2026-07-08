@@ -86,7 +86,7 @@ export default function ScheduleSection() {
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Lịch Tập
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-lg font-medium">
             Tìm một thời gian phù hợp và tham gia cộng đồng của chúng tôi.
           </p>
         </div>

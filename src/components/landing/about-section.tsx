@@ -1,13 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
-import LazyIframe from '@/components/ui/lazy-iframe';
+import { cn } from '@/lib/utils';
 
 export default function AboutSection() {
-  // Prefer the local uploaded about image (local2) but fall back to the remote/about placeholder
-  const aboutImage =
-    PlaceHolderImages.find((img) => img.id === 'local2') ||
-    PlaceHolderImages.find((img) => img.id === 'about');
+  // Get all gallery/album images (excluding logo)
+  const images = PlaceHolderImages.filter(
+    (img) => img.imageUrl.startsWith('/images/') && img.id !== 'site-logo'
+  );
+
+  // Default to local2 (chieusinh-luvyoga.jpg) or the first image
+  const defaultImage =
+    images.find((img) => img.id === 'local2') || images[0];
+
+  const [selectedImage, setSelectedImage] = useState(defaultImage);
 
   return (
     <section id="about" className="py-16 sm:py-24">
@@ -62,61 +71,56 @@ export default function AboutSection() {
               </ul>
             </div>
 
-            <div className="mt-6 text-sm text-muted-foreground"> 
+            <div className="mt-6 text-sm text-muted-foreground">
               <p className="font-semibold">Follow & media</p>
               <p>Chúng tôi chia sẻ hành trình tập luyện, trị liệu và lớp học trên kênh Facebook của Luv Yoga.</p>
             </div>
           </div>
-          <div className="flex justify-center animate-slide-up">
-            {aboutImage && (
-              <Card className="overflow-hidden shadow-xl hover-lift transition-all duration-300">
-                <CardContent className="p-0">
+          <div className="flex flex-col animate-slide-up">
+            {selectedImage && (
+              <Card className="overflow-hidden shadow-xl border-2 border-primary/10">
+                <CardContent className="p-0 relative aspect-[4/3] w-full">
                   <Image
-                    src={aboutImage.imageUrl}
-                    alt="Yoga instructor demonstrating therapeutic yoga poses in a serene studio environment"
-                    width={800}
-                    height={600}
-                    className="h-auto w-full object-cover transition-transform duration-300 hover:scale-105"
-                    data-ai-hint={aboutImage.imageHint}
-                    loading="lazy"
+                    src={selectedImage.imageUrl}
+                    alt={selectedImage.description}
+                    fill
+                    className="object-cover transition-all duration-500 hover:scale-105"
+                    priority
                   />
+                  {selectedImage.description && (
+                    <div className="absolute bottom-0 inset-x-0 bg-black/60 backdrop-blur-xs text-white p-3 text-sm font-medium">
+                      {selectedImage.description}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             )}
+
+            {/* Thumbnail horizontal row */}
+            <div className="flex gap-2.5 mt-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+              {images.map((img) => (
+                <button
+                  key={img.imageUrl}
+                  onClick={() => setSelectedImage(img)}
+                  className={cn(
+                    'relative flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 focus:outline-hidden',
+                    selectedImage.imageUrl === img.imageUrl
+                      ? 'border-primary scale-95 shadow-md ring-2 ring-primary/25'
+                      : 'border-border opacity-70 hover:opacity-100 hover:border-primary/50'
+                  )}
+                  title={img.description}
+                >
+                  <Image
+                    src={img.imageUrl}
+                    alt={img.description}
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
+                </button>
+              ))}
             </div>
           </div>
-
-          {/* Facebook embeds/media — responsive */}
-          <div className="container mx-auto px-4 md:px-6 mt-8">
-            <div className="grid gap-6 md:grid-cols-2 items-start">
-              <div className="rounded-lg overflow-hidden shadow-lg border p-2 bg-card">
-                <div className="aspect-[500/729] w-full">
-                  <LazyIframe
-                    src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FLuvYoga.Official%2Fposts%2Fpfbid02QJpfvbSDcSQnPCE2QnbKDr3Q9kd6HogZqxsbUWvKXdpyZy3PeATVBv1ZUTP58qk1l&show_text=true&width=500"
-                    title="Luv Yoga Facebook post"
-                    width="100%"
-                    height={729}
-                    style={{ border: 'none', overflow: 'hidden' }}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    placeholder={<div className="p-6 text-center text-sm text-muted-foreground">Bài đăng Facebook — đang tải…</div>}
-                  />
-                </div>
-              </div>
-
-              <div className="rounded-lg overflow-hidden shadow-lg border p-2 bg-card">
-                <div className="aspect-[295/476] w-full flex items-center justify-center">
-                  <LazyIframe
-                    src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F824210390396607%2F&show_text=false&width=295&t=0"
-                    title="Luv Yoga Facebook reel"
-                    width="100%"
-                    height={476}
-                    style={{ border: 'none', overflow: 'hidden' }}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    placeholder={<div className="p-6 text-center text-sm text-muted-foreground">Video Facebook — đang tải…</div>}
-                  />
-                </div>
-              </div>
-            </div>
         </div>
       </div>
     </section>
