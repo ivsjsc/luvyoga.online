@@ -19,20 +19,20 @@ export default function BlogsPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <h3 className="font-headline text-2xl font-bold tracking-tight sm:text-3xl mb-8">
-                  Bài Viết Nổi Bật
-                </h3>
-                <BlogPosts />
-              </div>
-              <div className="lg:col-span-1">
-                <h3 className="font-headline text-2xl font-bold tracking-tight sm:text-3xl mb-8 text-center lg:text-left">
-                  Cập nhật từ Facebook
+                  Cập nhật mới nhất từ Fanpage
                 </h3>
                 <div className="flex justify-center lg:justify-start">
                   <FacebookFeed />
                 </div>
+              </div>
+              <div className="lg:col-span-1">
+                <h3 className="font-headline text-2xl font-bold tracking-tight sm:text-3xl mb-8 text-center lg:text-left">
+                  Bài viết nổi bật
+                </h3>
+                <BlogPosts compact={true} />
               </div>
             </div>
           </div>
