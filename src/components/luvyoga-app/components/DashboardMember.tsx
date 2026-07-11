@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { User, YogaClass, Payment, Notification, UserRole } from '../types';
 import ScheduleCalendar from './ScheduleCalendar';
 import AIAssistant from './AIAssistant';
-import { Bell, CreditCard, LayoutDashboard, Info, Award, Clock, Heart, CalendarCheck, User as UserIcon, LogOut, ChevronRight, X, Phone, Mail, MapPin, Facebook, Instagram, Save, Activity, HeartPulse, Sparkles, Check, MessageSquare, Calendar, QrCode, Banknote, Copy, ArrowLeft, FileText, Download, RotateCw, ShieldCheck, HelpCircle, Sunrise, Sun, Sunset, Moon } from 'lucide-react';
+import { Bell, CreditCard, LayoutDashboard, Info, Award, Clock, Heart, CalendarCheck, User as UserIcon, LogOut, ChevronRight, X, Phone, Mail, MapPin, Facebook, Instagram, Save, Activity, HeartPulse, Sparkles, Check, MessageSquare, Calendar, QrCode, Banknote, Copy, ArrowLeft, FileText, Download, RotateCw, ShieldCheck, HelpCircle, Sunrise, Sun, Sunset, Moon, Music } from 'lucide-react';
 import { ASSETS } from '../constants';
 
 interface DashboardMemberProps {
@@ -1553,6 +1553,10 @@ const DashboardMember: React.FC<DashboardMemberProps> = ({ user, classes, paymen
                                 <a href="https://www.instagram.com/luvyoga.official" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-4 bg-pink-50 text-pink-600 rounded-xl hover:bg-pink-100 transition-colors">
                                     <Instagram size={24} className="mb-2" />
                                     <span className="text-xs font-bold">Instagram</span>
+                                </a>
+                                <a href="https://www.tiktok.com/@luv.yoga" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors col-span-2">
+                                    <Music size={24} className="mb-2" />
+                                    <span className="text-xs font-bold">TikTok</span>
                                 </a>
                             </div>
 

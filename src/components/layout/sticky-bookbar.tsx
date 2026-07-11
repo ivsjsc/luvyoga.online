@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Phone, Clock, Plus, X, ArrowUp, MessageCircle, Mail, Facebook, Instagram } from 'lucide-react';
+import { Phone, Clock, Plus, X, ArrowUp, MessageCircle, Mail, Facebook, Instagram, Music } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const socialLinks = [
@@ -36,6 +36,12 @@ const socialLinks = [
     href: 'https://www.instagram.com/luvyoga.official',
     icon: Instagram,
     bgColor: 'bg-pink-600 hover:bg-pink-700',
+  },
+  {
+    name: 'TikTok',
+    href: 'https://www.tiktok.com/@luv.yoga',
+    icon: Music,
+    bgColor: 'bg-black hover:bg-gray-800',
   },
 ];
 

@@ -9,6 +9,7 @@ import {
   MessageCircle,
   Phone,
   Sparkles,
+  Music,
 } from 'lucide-react';
 
 import { Logo } from '@/components/icons';
@@ -27,6 +28,11 @@ export default function Footer() {
       name: 'Instagram',
       href: 'https://www.instagram.com/luvyoga.official',
       icon: Instagram,
+    },
+    {
+      name: 'TikTok',
+      href: 'https://www.tiktok.com/@luv.yoga',
+      icon: Music,
     },
   ];
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Facebook, Instagram, Mail, Phone, Plus, X, ArrowUp, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, Plus, X, ArrowUp, MessageCircle, Music } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -37,85 +37,10 @@ const socialLinks = [
     icon: Instagram,
     bgColor: 'bg-pink-600 hover:bg-pink-700',
   },
+  {
+    name: 'TikTok',
+    href: 'https://www.tiktok.com/@luv.yoga',
+    icon: Music,
+    bgColor: 'bg-black hover:bg-gray-800',
+  },
 ];
-
-
-export default function ContactFAB() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  return (
-    <div className="fixed bottom-6 right-6 z-50 hidden md:block">
-      <div className="relative flex flex-col items-center gap-2">
-        {isVisible && (
-           <Button
-            onClick={scrollToTop}
-            size="icon"
-            className="h-12 w-12 rounded-full bg-secondary text-secondary-foreground shadow-lg transition-opacity hover:bg-secondary/80"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="h-6 w-6" />
-          </Button>
-        )}
-        {isOpen && (
-          <div className="flex flex-col gap-3 transition-all duration-300">
-            {socialLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                passHref
-              >
-                <Button
-                  size="icon"
-                  className={cn(
-                    'rounded-full text-white shadow-lg',
-                    link.bgColor
-                  )}
-                  aria-label={link.name}
-                >
-                  <link.icon className="h-6 w-6" />
-                </Button>
-              </Link>
-            ))}
-          </div>
-        )}
-        <Button
-          onClick={() => setIsOpen(!isOpen)}
-          size="icon"
-          className="h-14 w-14 rounded-full bg-gradient-to-tr from-amber-500 to-rose-500 text-white shadow-xl transition-all duration-300 hover:from-amber-600 hover:to-rose-600 hover:scale-110 border-none ring-2 ring-white/20"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? (
-            <X className="h-7 w-7" />
-          ) : (
-            <Plus className="h-7 w-7" />
-          )}
-          <span className="sr-only">{isOpen ? 'Đóng menu liên hệ' : 'Mở menu liên hệ'}</span>
-        </Button>
-      </div>
-    </div>
-  );
-}
